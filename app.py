@@ -1,5 +1,5 @@
 import streamlit as st
-from urllib.parse import quote
+import pandas as pd
 
 # ============================================================
 # CONFIGURACIÓN
