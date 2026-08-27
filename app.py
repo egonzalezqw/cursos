@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+from urllib.parse import quote
 
 # ============================================================
 # CONFIGURACIÓN
@@ -1290,4 +1290,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-```
