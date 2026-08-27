@@ -1,6 +1,6 @@
-```python
+```text
 import streamlit as st
-from urllib.parse import quote
+...
 
 # ============================================================
 # CONFIGURACIÓN
