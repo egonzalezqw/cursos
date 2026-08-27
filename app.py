@@ -1,36 +1,29 @@
-```text
+```python
 import streamlit as st
-...
+from urllib.parse import quote
 
 # ============================================================
 # CONFIGURACIÓN
 # ============================================================
 
 st.set_page_config(
-    page_title="Catálogo de Cursos | Capacitación Tecnológica",
+    page_title="Catálogo de Cursos",
     page_icon="🎓",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    layout="wide"
 )
 
 # ============================================================
-# DATOS DE CONTACTO
+# CONFIGURACIÓN DE CONTACTO
 # ============================================================
 
 WHATSAPP_NUMBER = "50662614659"
-CONTACT_EMAIL = "gonzalezestebanm9@gmail.com"
-COMPANY_NAME = "Capacitación Tecnológica"
+EMAIL = "tu-correo@ejemplo.com"
 
 # ============================================================
 # CURSOS
 # ============================================================
 
 COURSES = [
-
-    # ========================================================
-    # INTELIGENCIA ARTIFICIAL
-    # ========================================================
-
     {
         "category": "Inteligencia Artificial",
         "icon": "🤖",
@@ -38,23 +31,19 @@ COURSES = [
         "hours": 8,
         "price": 600,
         "level": "Básico",
-        "objective": (
-            "Desarrollar habilidades prácticas para utilizar Microsoft 365 Copilot "
-            "como asistente de productividad en las principales herramientas de Microsoft 365."
-        ),
+        "objective": "Desarrollar habilidades prácticas para utilizar Microsoft 365 Copilot como asistente de productividad.",
         "topics": [
             "Introducción a Microsoft 365 Copilot",
-            "Conceptos de Inteligencia Artificial Generativa",
-            "Prompt Engineering aplicado a productividad",
-            "Copilot en Microsoft Word",
-            "Copilot en Microsoft Excel",
-            "Copilot en Microsoft PowerPoint",
+            "Inteligencia Artificial Generativa",
+            "Prompt Engineering",
+            "Copilot en Word",
+            "Copilot en Excel",
+            "Copilot en PowerPoint",
             "Copilot en Outlook",
-            "Copilot en Microsoft Teams",
-            "Buenas prácticas y uso responsable de IA",
-        ],
+            "Copilot en Teams",
+            "Buenas prácticas y seguridad"
+        ]
     },
-
     {
         "category": "Inteligencia Artificial",
         "icon": "🤖",
@@ -62,23 +51,19 @@ COURSES = [
         "hours": 16,
         "price": 1000,
         "level": "Intermedio",
-        "objective": (
-            "Aplicar Microsoft Copilot en escenarios empresariales para mejorar "
-            "la productividad, generación de contenido, análisis de información y colaboración."
-        ),
+        "objective": "Aplicar Microsoft Copilot en escenarios empresariales para mejorar productividad y eficiencia.",
         "topics": [
-            "IA generativa en entornos empresariales",
-            "Microsoft Copilot y Microsoft 365",
+            "IA generativa empresarial",
+            "Microsoft Copilot",
             "Casos de uso empresariales",
-            "Creación de prompts efectivos",
+            "Creación de prompts",
             "Generación de documentos",
-            "Análisis y resumen de información",
-            "Presentaciones asistidas por IA",
-            "Productividad con Outlook y Teams",
-            "Gobernanza y uso responsable",
-        ],
+            "Análisis de información",
+            "Presentaciones con IA",
+            "Outlook y Teams",
+            "Gobernanza y uso responsable"
+        ]
     },
-
     {
         "category": "Inteligencia Artificial",
         "icon": "🧠",
@@ -86,24 +71,20 @@ COURSES = [
         "hours": 16,
         "price": 1000,
         "level": "Básico",
-        "objective": (
-            "Comprender los fundamentos de la Inteligencia Artificial Generativa "
-            "y utilizar modelos generativos en escenarios profesionales y empresariales."
-        ),
+        "objective": "Comprender los fundamentos de la Inteligencia Artificial Generativa y sus principales aplicaciones.",
         "topics": [
-            "Fundamentos de Inteligencia Artificial",
-            "Machine Learning e Inteligencia Artificial",
-            "Inteligencia Artificial Generativa",
+            "Fundamentos de IA",
+            "Machine Learning",
+            "IA Generativa",
             "Large Language Models",
             "Modelos multimodales",
             "Generación de texto",
             "Generación de imágenes",
             "Prompt Engineering",
-            "Casos de uso empresariales",
-            "Riesgos, ética y seguridad",
-        ],
+            "Casos empresariales",
+            "Ética y seguridad"
+        ]
     },
-
     {
         "category": "Inteligencia Artificial",
         "icon": "✍️",
@@ -111,25 +92,19 @@ COURSES = [
         "hours": 16,
         "price": 1100,
         "level": "Intermedio",
-        "objective": (
-            "Diseñar instrucciones efectivas para modelos de Inteligencia Artificial "
-            "Generativa, mejorando la calidad, precisión y consistencia de las respuestas."
-        ),
+        "objective": "Diseñar prompts efectivos para obtener resultados de mayor calidad con herramientas de IA.",
         "topics": [
-            "Fundamentos del Prompt Engineering",
+            "Fundamentos de Prompt Engineering",
             "Anatomía de un prompt",
-            "Definición de contexto",
-            "Roles e instrucciones",
-            "Restricciones y formato de salida",
+            "Contexto e instrucciones",
             "Zero-shot prompting",
             "Few-shot prompting",
             "Prompts estructurados",
             "Evaluación de respuestas",
             "Optimización de prompts",
-            "Casos empresariales",
-        ],
+            "Casos empresariales"
+        ]
     },
-
     {
         "category": "Inteligencia Artificial",
         "icon": "⚙️",
@@ -137,51 +112,18 @@ COURSES = [
         "hours": 16,
         "price": 1100,
         "level": "Intermedio",
-        "objective": (
-            "Identificar y automatizar tareas repetitivas mediante Inteligencia Artificial, "
-            "mejorando la productividad y eficiencia de los procesos empresariales."
-        ),
+        "objective": "Identificar y automatizar tareas repetitivas mediante herramientas de Inteligencia Artificial.",
         "topics": [
             "Identificación de tareas automatizables",
-            "IA aplicada a procesos empresariales",
+            "IA aplicada a procesos",
             "Automatización de documentos",
-            "Automatización de análisis de información",
-            "Flujos de trabajo con IA",
+            "Automatización de información",
+            "Flujos de trabajo",
             "Integración con herramientas empresariales",
-            "Automatización con asistentes inteligentes",
             "Validación de resultados",
-            "Diseño de casos de uso",
-        ],
+            "Diseño de casos de uso"
+        ]
     },
-
-    {
-        "category": "Inteligencia Artificial",
-        "icon": "🧠",
-        "name": "Inteligencia Artificial para Profesionales",
-        "hours": None,
-        "price": None,
-        "level": "Adaptable",
-        "objective": (
-            "Explorar conceptos y aplicaciones de Inteligencia Artificial orientadas "
-            "a la productividad, innovación y transformación de procesos profesionales."
-        ),
-        "topics": [
-            "Fundamentos de Inteligencia Artificial",
-            "IA Generativa",
-            "Modelos de lenguaje",
-            "Automatización",
-            "Análisis de información",
-            "Productividad con IA",
-            "Casos de uso empresariales",
-            "Prompt Engineering",
-            "Ética y uso responsable",
-        ],
-    },
-
-    # ========================================================
-    # AZURE
-    # ========================================================
-
     {
         "category": "Azure",
         "icon": "☁️",
@@ -189,26 +131,20 @@ COURSES = [
         "hours": 24,
         "price": 1400,
         "level": "Básico",
-        "objective": (
-            "Comprender los conceptos fundamentales de Microsoft Azure, "
-            "sus principales servicios, arquitectura, seguridad y modelos de consumo."
-        ),
+        "objective": "Comprender los conceptos fundamentales de Microsoft Azure y sus principales servicios.",
         "topics": [
-            "Conceptos de Cloud Computing",
-            "Modelos IaaS, PaaS y SaaS",
+            "Cloud Computing",
+            "IaaS, PaaS y SaaS",
             "Arquitectura de Azure",
-            "Regiones y Availability Zones",
             "Suscripciones",
             "Resource Groups",
-            "Azure Virtual Machines",
+            "Máquinas virtuales",
             "Azure Storage",
-            "Azure Networking",
+            "Redes virtuales",
             "Identidad y seguridad",
-            "Monitoreo",
-            "Costos y administración",
-        ],
+            "Monitoreo y costos"
+        ]
     },
-
     {
         "category": "Azure",
         "icon": "☁️",
@@ -216,14 +152,11 @@ COURSES = [
         "hours": 24,
         "price": 1600,
         "level": "Intermedio",
-        "objective": (
-            "Administrar máquinas virtuales en Microsoft Azure aplicando buenas prácticas "
-            "de implementación, seguridad, disponibilidad, monitoreo y operación."
-        ),
+        "objective": "Administrar máquinas virtuales en Azure aplicando buenas prácticas de seguridad y disponibilidad.",
         "topics": [
             "Creación de máquinas virtuales",
             "Imágenes",
-            "Discos administrados",
+            "Discos",
             "Redes virtuales",
             "Network Security Groups",
             "Acceso remoto",
@@ -232,14 +165,9 @@ COURSES = [
             "Escalabilidad",
             "Monitoreo",
             "Seguridad",
-            "Optimización de costos",
-        ],
+            "Optimización de costos"
+        ]
     },
-
-    # ========================================================
-    # POWER BI
-    # ========================================================
-
     {
         "category": "Power BI",
         "icon": "📊",
@@ -247,14 +175,11 @@ COURSES = [
         "hours": 24,
         "price": 1600,
         "level": "Básico",
-        "objective": (
-            "Desarrollar competencias fundamentales para transformar datos "
-            "en información útil mediante Microsoft Power BI."
-        ),
+        "objective": "Desarrollar competencias fundamentales para transformar datos en información útil mediante Power BI.",
         "topics": [
             "Introducción a Power BI",
             "Power BI Desktop",
-            "Conexión a fuentes de datos",
+            "Fuentes de datos",
             "Power Query",
             "Transformación de datos",
             "Visualizaciones",
@@ -262,10 +187,9 @@ COURSES = [
             "Segmentadores",
             "Creación de informes",
             "Publicación",
-            "Introducción a DAX",
-        ],
+            "Introducción a DAX"
+        ]
     },
-
     {
         "category": "Power BI",
         "icon": "📈",
@@ -273,25 +197,20 @@ COURSES = [
         "hours": 24,
         "price": 1700,
         "level": "Intermedio",
-        "objective": (
-            "Diseñar modelos de datos eficientes en Power BI para facilitar "
-            "el análisis y la generación de indicadores empresariales."
-        ),
+        "objective": "Diseñar modelos de datos eficientes para facilitar análisis y generación de indicadores.",
         "topics": [
-            "Fundamentos de modelado",
-            "Modelo dimensional",
+            "Modelado dimensional",
             "Tablas de hechos",
-            "Tablas de dimensiones",
+            "Dimensiones",
             "Esquema estrella",
             "Relaciones",
             "Cardinalidad",
             "Medidas",
             "Columnas calculadas",
             "DAX",
-            "Optimización del modelo",
-        ],
+            "Optimización"
+        ]
     },
-
     {
         "category": "Power BI",
         "icon": "📊",
@@ -299,14 +218,10 @@ COURSES = [
         "hours": 16,
         "price": 1200,
         "level": "Intermedio",
-        "objective": (
-            "Crear dashboards profesionales e interactivos que faciliten "
-            "la interpretación y comunicación de información empresarial."
-        ),
+        "objective": "Crear dashboards profesionales e interactivos para facilitar la interpretación de información.",
         "topics": [
             "Principios de visualización",
             "Diseño de dashboards",
-            "Selección de visualizaciones",
             "KPI",
             "Filtros",
             "Segmentadores",
@@ -314,10 +229,9 @@ COURSES = [
             "Tooltips",
             "Navegación",
             "Experiencia de usuario",
-            "Storytelling con datos",
-        ],
+            "Storytelling"
+        ]
     },
-
     {
         "category": "Power BI",
         "icon": "📈",
@@ -325,28 +239,19 @@ COURSES = [
         "hours": 24,
         "price": 1700,
         "level": "Avanzado",
-        "objective": (
-            "Aplicar Power BI para resolver necesidades de analítica empresarial "
-            "y apoyar la toma de decisiones basada en datos."
-        ),
+        "objective": "Aplicar Power BI para resolver necesidades de analítica empresarial y apoyar la toma de decisiones.",
         "topics": [
             "Analítica empresarial",
-            "Indicadores de gestión",
             "KPIs",
-            "Modelado de datos",
+            "Modelado",
             "DAX",
             "Análisis de tendencias",
             "Segmentación",
             "Dashboards ejecutivos",
-            "Storytelling",
-            "Caso práctico empresarial",
-        ],
+            "Storytelling con datos",
+            "Caso práctico empresarial"
+        ]
     },
-
-    # ========================================================
-    # POWER PLATFORM
-    # ========================================================
-
     {
         "category": "Power Platform",
         "icon": "⚡",
@@ -354,12 +259,9 @@ COURSES = [
         "hours": 24,
         "price": 1500,
         "level": "Básico",
-        "objective": (
-            "Comprender el ecosistema Microsoft Power Platform y seleccionar "
-            "sus componentes para resolver necesidades de negocio."
-        ),
+        "objective": "Comprender el ecosistema Microsoft Power Platform y sus principales componentes.",
         "topics": [
-            "Introducción a Power Platform",
+            "Power Platform",
             "Power Apps",
             "Power Automate",
             "Power BI",
@@ -368,10 +270,9 @@ COURSES = [
             "Copilot Studio",
             "Conectores",
             "Seguridad",
-            "Gobernanza",
-        ],
+            "Gobernanza"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "⚡",
@@ -379,12 +280,9 @@ COURSES = [
         "hours": 24,
         "price": 1700,
         "level": "Intermedio",
-        "objective": (
-            "Diseñar flujos automatizados para optimizar procesos empresariales "
-            "y reducir tareas manuales."
-        ),
+        "objective": "Diseñar flujos automatizados para optimizar procesos empresariales.",
         "topics": [
-            "Introducción a Power Automate",
+            "Power Automate",
             "Flujos automatizados",
             "Flujos instantáneos",
             "Flujos programados",
@@ -393,11 +291,9 @@ COURSES = [
             "Condiciones",
             "Expresiones",
             "Manejo de errores",
-            "Integración con Microsoft 365",
-            "Caso práctico",
-        ],
+            "Microsoft 365"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "📱",
@@ -405,10 +301,7 @@ COURSES = [
         "hours": 24,
         "price": 1800,
         "level": "Intermedio",
-        "objective": (
-            "Crear aplicaciones empresariales mediante Power Apps, "
-            "conectadas a fuentes de datos y servicios empresariales."
-        ),
+        "objective": "Crear aplicaciones empresariales mediante Power Apps conectadas a fuentes de datos.",
         "topics": [
             "Power Apps Canvas",
             "Controles",
@@ -418,12 +311,10 @@ COURSES = [
             "Dataverse",
             "Fórmulas",
             "Validaciones",
-            "Diseño de aplicaciones",
-            "Publicación",
-            "Seguridad",
-        ],
+            "Diseño",
+            "Publicación"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "🗄️",
@@ -431,10 +322,7 @@ COURSES = [
         "hours": 16,
         "price": 1400,
         "level": "Intermedio",
-        "objective": (
-            "Administrar información empresarial en Microsoft Dataverse "
-            "aplicando conceptos de estructura, seguridad y gobierno de datos."
-        ),
+        "objective": "Administrar información empresarial mediante Microsoft Dataverse.",
         "topics": [
             "Arquitectura de Dataverse",
             "Tablas",
@@ -443,12 +331,11 @@ COURSES = [
             "Reglas de negocio",
             "Seguridad",
             "Roles",
-            "Integración con Power Apps",
-            "Integración con Power Automate",
-            "Buenas prácticas",
-        ],
+            "Power Apps",
+            "Power Automate",
+            "Buenas prácticas"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "🔗",
@@ -456,23 +343,19 @@ COURSES = [
         "hours": 16,
         "price": 1300,
         "level": "Intermedio",
-        "objective": (
-            "Integrar Power Platform con servicios de Microsoft 365 "
-            "para automatizar procesos y mejorar la colaboración."
-        ),
+        "objective": "Integrar Power Platform con servicios de Microsoft 365 para automatizar procesos.",
         "topics": [
-            "Power Platform y Microsoft 365",
+            "Microsoft 365",
             "SharePoint",
             "Outlook",
-            "Microsoft Teams",
+            "Teams",
             "Excel",
             "OneDrive",
             "Conectores",
             "Automatización",
-            "Casos de integración",
-        ],
+            "Casos de integración"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "🌐",
@@ -480,12 +363,9 @@ COURSES = [
         "hours": 16,
         "price": 1100,
         "level": "Intermedio",
-        "objective": (
-            "Construir sitios web empresariales mediante Power Pages "
-            "y conectarlos con datos y procesos de negocio."
-        ),
+        "objective": "Construir sitios web empresariales mediante Power Pages.",
         "topics": [
-            "Introducción a Power Pages",
+            "Power Pages",
             "Creación de sitios",
             "Diseño",
             "Navegación",
@@ -494,10 +374,9 @@ COURSES = [
             "Listas",
             "Autenticación",
             "Permisos",
-            "Publicación",
-        ],
+            "Publicación"
+        ]
     },
-
     {
         "category": "Power Platform",
         "icon": "🤖",
@@ -505,30 +384,20 @@ COURSES = [
         "hours": 16,
         "price": 1300,
         "level": "Intermedio",
-        "objective": (
-            "Diseñar agentes y experiencias conversacionales mediante "
-            "Microsoft Copilot Studio para automatizar interacciones."
-        ),
+        "objective": "Diseñar agentes conversacionales mediante Microsoft Copilot Studio.",
         "topics": [
-            "Introducción a Copilot Studio",
+            "Copilot Studio",
             "Creación de agentes",
             "Temas",
             "Fuentes de conocimiento",
-            "Instrucciones",
             "Prompts",
             "Acciones",
             "Conectores",
             "Power Automate",
             "Pruebas",
-            "Publicación",
-            "Gobernanza",
-        ],
+            "Publicación"
+        ]
     },
-
-    # ========================================================
-    # LINUX
-    # ========================================================
-
     {
         "category": "Linux",
         "icon": "🐧",
@@ -536,24 +405,20 @@ COURSES = [
         "hours": 24,
         "price": 1400,
         "level": "Básico",
-        "objective": (
-            "Adquirir conocimientos fundamentales para operar sistemas Linux "
-            "mediante la línea de comandos y herramientas esenciales."
-        ),
+        "objective": "Adquirir conocimientos fundamentales para operar sistemas Linux.",
         "topics": [
             "Arquitectura Linux",
             "Terminal",
-            "Comandos básicos",
+            "Comandos",
             "Sistema de archivos",
             "Usuarios",
             "Grupos",
             "Permisos",
             "Procesos",
             "Paquetes",
-            "Shell scripting básico",
-        ],
+            "Shell scripting"
+        ]
     },
-
     {
         "category": "Linux",
         "icon": "🐧",
@@ -561,10 +426,7 @@ COURSES = [
         "hours": 40,
         "price": 2400,
         "level": "Avanzado",
-        "objective": (
-            "Desarrollar competencias para administrar servidores Linux, "
-            "gestionar servicios, seguridad, almacenamiento y automatización."
-        ),
+        "objective": "Administrar servidores Linux, servicios, seguridad, almacenamiento y automatización.",
         "topics": [
             "Administración del sistema",
             "Usuarios y grupos",
@@ -577,10 +439,9 @@ COURSES = [
             "Seguridad",
             "Shell scripting",
             "Automatización",
-            "Troubleshooting",
-        ],
+            "Troubleshooting"
+        ]
     },
-
     {
         "category": "Linux",
         "icon": "🖥️",
@@ -588,10 +449,7 @@ COURSES = [
         "hours": 40,
         "price": 2400,
         "level": "Avanzado",
-        "objective": (
-            "Preparar al participante para operar servidores Linux "
-            "en ambientes empresariales con enfoque en disponibilidad y seguridad."
-        ),
+        "objective": "Operar servidores Linux en ambientes empresariales con enfoque en disponibilidad y seguridad.",
         "topics": [
             "Instalación",
             "Configuración",
@@ -603,14 +461,9 @@ COURSES = [
             "Backup",
             "Monitoreo",
             "Hardening",
-            "Resolución de incidentes",
-        ],
+            "Troubleshooting"
+        ]
     },
-
-    # ========================================================
-    # CONTENEDORES
-    # ========================================================
-
     {
         "category": "Contenedores",
         "icon": "📦",
@@ -618,12 +471,9 @@ COURSES = [
         "hours": 24,
         "price": 1800,
         "level": "Intermedio",
-        "objective": (
-            "Comprender y utilizar Docker para empaquetar, ejecutar "
-            "y administrar aplicaciones mediante contenedores."
-        ),
+        "objective": "Comprender y utilizar Docker para ejecutar aplicaciones mediante contenedores.",
         "topics": [
-            "Conceptos de contenedores",
+            "Contenedores",
             "Docker Engine",
             "Imágenes",
             "Contenedores",
@@ -632,10 +482,9 @@ COURSES = [
             "Networks",
             "Docker Compose",
             "Registry",
-            "Buenas prácticas",
-        ],
+            "Buenas prácticas"
+        ]
     },
-
     {
         "category": "Contenedores",
         "icon": "☸️",
@@ -643,10 +492,7 @@ COURSES = [
         "hours": 32,
         "price": 2100,
         "level": "Avanzado",
-        "objective": (
-            "Comprender los fundamentos de Kubernetes y DevOps "
-            "para desplegar, administrar y automatizar aplicaciones contenedorizadas."
-        ),
+        "objective": "Comprender Kubernetes y DevOps para desplegar y administrar aplicaciones contenedorizadas.",
         "topics": [
             "Contenedores",
             "Orquestación",
@@ -659,10 +505,9 @@ COURSES = [
             "CI/CD",
             "Git",
             "Observabilidad",
-            "Buenas prácticas DevOps",
-        ],
+            "DevOps"
+        ]
     },
-
     {
         "category": "Contenedores",
         "icon": "🔧",
@@ -670,27 +515,18 @@ COURSES = [
         "hours": 16,
         "price": 1100,
         "level": "Intermedio",
-        "objective": (
-            "Comprender los principios de arquitectura de microservicios "
-            "y sus principales componentes tecnológicos."
-        ),
+        "objective": "Comprender los principios de arquitectura de microservicios.",
         "topics": [
             "Monolitos vs microservicios",
-            "Principios de diseño",
+            "Diseño de microservicios",
             "APIs REST",
-            "Comunicación entre servicios",
+            "Comunicación",
             "Configuración",
             "Service Discovery",
             "Contenedores",
-            "Observabilidad",
-            "Buenas prácticas",
-        ],
+            "Observabilidad"
+        ]
     },
-
-    # ========================================================
-    # CIBERSEGURIDAD
-    # ========================================================
-
     {
         "category": "Ciberseguridad",
         "icon": "🛡️",
@@ -698,10 +534,7 @@ COURSES = [
         "hours": 24,
         "price": 1400,
         "level": "Básico",
-        "objective": (
-            "Desarrollar una base sólida en principios de ciberseguridad, "
-            "amenazas, controles y buenas prácticas de protección."
-        ),
+        "objective": "Desarrollar una base sólida en principios de ciberseguridad y protección.",
         "topics": [
             "Principios de seguridad",
             "Confidencialidad",
@@ -711,12 +544,10 @@ COURSES = [
             "Vulnerabilidades",
             "Malware",
             "Seguridad de redes",
-            "Identidad y acceso",
-            "Seguridad de endpoints",
-            "Gestión de incidentes",
-        ],
+            "Identidad",
+            "Gestión de incidentes"
+        ]
     },
-
     {
         "category": "Ciberseguridad",
         "icon": "🔎",
@@ -724,25 +555,20 @@ COURSES = [
         "hours": 24,
         "price": 1500,
         "level": "Intermedio",
-        "objective": (
-            "Comprender la operación de un Security Operations Center "
-            "y los procesos utilizados para monitorear, detectar y responder a incidentes."
-        ),
+        "objective": "Comprender la operación de un Security Operations Center.",
         "topics": [
             "Qué es un SOC",
             "Roles del SOC",
-            "Procesos de seguridad",
+            "Procesos",
             "SIEM",
             "Logs",
             "Eventos",
             "Monitoreo",
             "Threat Intelligence",
             "Detección",
-            "Respuesta a incidentes",
-            "Escalamiento",
-        ],
+            "Respuesta a incidentes"
+        ]
     },
-
     {
         "category": "Ciberseguridad",
         "icon": "🔐",
@@ -750,24 +576,19 @@ COURSES = [
         "hours": None,
         "price": None,
         "level": "Adaptable",
-        "objective": (
-            "Conocer los fundamentos de ISO/IEC 27001 y los principales "
-            "elementos necesarios para gestionar un Sistema de Gestión de Seguridad de la Información."
-        ),
+        "objective": "Conocer los fundamentos de ISO/IEC 27001 y los principales elementos de un Sistema de Gestión de Seguridad de la Información.",
         "topics": [
-            "Fundamentos de ISO 27001",
-            "Sistema de Gestión de Seguridad de la Información",
-            "Contexto de la organización",
+            "Fundamentos ISO 27001",
+            "SGSI",
+            "Contexto organizacional",
             "Gestión de riesgos",
-            "Controles de seguridad",
+            "Controles",
             "Políticas",
             "Procedimientos",
-            "Auditoría interna",
-            "Mejora continua",
-            "Preparación para implementación",
-        ],
+            "Auditoría",
+            "Mejora continua"
+        ]
     },
-
     {
         "category": "Ciberseguridad",
         "icon": "🔒",
@@ -775,29 +596,20 @@ COURSES = [
         "hours": 16,
         "price": 1200,
         "level": "Avanzado",
-        "objective": (
-            "Comprender e implementar principios de Zero Trust para fortalecer "
-            "la seguridad de usuarios, dispositivos, aplicaciones, redes y datos."
-        ),
+        "objective": "Comprender e implementar principios Zero Trust para fortalecer la seguridad empresarial.",
         "topics": [
             "Principios Zero Trust",
             "Never Trust, Always Verify",
-            "Identidad como perímetro",
+            "Identidad",
             "Least Privilege",
             "MFA",
             "Acceso condicional",
             "Segmentación",
-            "Seguridad de endpoints",
+            "Endpoints",
             "Monitoreo",
-            "Analítica",
-            "Estrategia de implementación",
-        ],
+            "Estrategia de implementación"
+        ]
     },
-
-    # ========================================================
-    # ARQUITECTURA
-    # ========================================================
-
     {
         "category": "Arquitectura y Gestión",
         "icon": "🏗️",
@@ -805,460 +617,262 @@ COURSES = [
         "hours": None,
         "price": None,
         "level": "Adaptable",
-        "objective": (
-            "Introducir los principios y componentes de TOGAF para estructurar "
-            "y gestionar iniciativas de arquitectura empresarial."
-        ),
+        "objective": "Introducir los principios de TOGAF para estructurar y gestionar iniciativas de arquitectura empresarial.",
         "topics": [
             "Arquitectura empresarial",
-            "Introducción a TOGAF",
+            "TOGAF",
             "Architecture Development Method",
             "Arquitectura de negocio",
             "Arquitectura de datos",
             "Arquitectura de aplicaciones",
             "Arquitectura tecnológica",
-            "Gobernanza",
-            "Gestión de cambios",
-        ],
-    },
+            "Gobernanza"
+        ]
+    }
 ]
 
 # ============================================================
-# ICONOS POR CATEGORÍA
+# FUNCIONES
 # ============================================================
 
-CATEGORY_ICONS = {
-    "Inteligencia Artificial": "🤖",
-    "Azure": "☁️",
-    "Power BI": "📊",
-    "Power Platform": "⚡",
-    "Linux": "🐧",
-    "Contenedores": "📦",
-    "Ciberseguridad": "🛡️",
-    "Arquitectura y Gestión": "🏗️",
-}
+def money(price):
+    if price is None:
+        return "Consultar"
+    return f"${price:,.0f}"
+
+
+def hours_text(hours):
+    if hours is None:
+        return "Por definir"
+    return f"{hours} horas"
+
+
+def whatsapp_link(course):
+    message = (
+        f"Hola, estoy interesado(a) en el curso "
+        f"'{course['name']}'. Me gustaría recibir información."
+    )
+
+    return (
+        f"https://wa.me/{WHATSAPP_NUMBER}"
+        f"?text={quote(message)}"
+    )
+
 
 # ============================================================
-# CSS
+# ESTILOS
 # ============================================================
 
 st.markdown(
     """
-<style>
+    <style>
 
-    /* General */
     .main {
-        background-color: #f8fafc;
+        background: #f8fafc;
     }
 
     .block-container {
-        padding-top: 2rem;
-        padding-bottom: 3rem;
         max-width: 1400px;
+        padding-top: 2rem;
     }
 
-    /* Header */
     .hero {
+        background: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a,
+            #2563eb
+        );
+
         padding: 45px;
-        border-radius: 24px;
-        background:
-            radial-gradient(circle at top right, rgba(59,130,246,.35), transparent 35%),
-            linear-gradient(135deg, #0f172a, #1e3a8a 55%, #2563eb);
+        border-radius: 25px;
         color: white;
         margin-bottom: 30px;
-        box-shadow: 0 15px 40px rgba(15,23,42,.18);
     }
 
     .hero h1 {
         color: white;
         font-size: 2.8rem;
         font-weight: 800;
-        margin-bottom: 10px;
     }
 
     .hero p {
         color: #dbeafe;
         font-size: 1.15rem;
-        max-width: 850px;
     }
 
-    /* Cards */
-    .course-card {
+    .card {
         background: white;
         border: 1px solid #e2e8f0;
         border-radius: 18px;
         padding: 22px;
-        min-height: 290px;
+        min-height: 275px;
         margin-bottom: 12px;
-        box-shadow: 0 5px 18px rgba(15,23,42,.06);
-        transition: all .2s ease;
+        box-shadow: 0 5px 18px rgba(15,23,42,.07);
     }
 
-    .course-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(15,23,42,.12);
-        border-color: #93c5fd;
+    .icon {
+        font-size: 2.3rem;
     }
 
-    .course-icon {
-        font-size: 2.2rem;
-    }
-
-    .category-tag {
+    .tag {
         display: inline-block;
         background: #eff6ff;
         color: #1d4ed8;
-        border-radius: 999px;
         padding: 5px 10px;
+        border-radius: 999px;
         font-size: .75rem;
-        font-weight: 700;
+        font-weight: bold;
+        margin-top: 8px;
     }
 
-    .level-tag {
+    .level {
         display: inline-block;
         background: #f1f5f9;
         color: #475569;
-        border-radius: 999px;
         padding: 5px 10px;
+        border-radius: 999px;
         font-size: .75rem;
-        font-weight: 700;
+        font-weight: bold;
         margin-left: 5px;
     }
 
-    .course-title {
-        font-size: 1.12rem;
-        font-weight: 750;
+    .title {
         color: #0f172a;
+        font-size: 1.12rem;
+        font-weight: 800;
         min-height: 55px;
         margin-top: 12px;
     }
 
-    .course-description {
+    .description {
         color: #64748b;
         font-size: .9rem;
-        min-height: 75px;
+        min-height: 65px;
     }
 
     .price {
-        color: #0f172a;
+        color: #1d4ed8;
         font-size: 1.35rem;
         font-weight: 800;
     }
 
-    .hours {
-        color: #64748b;
-        font-weight: 600;
-    }
-
-    /* Detail */
-    .detail-header {
-        padding: 35px;
-        border-radius: 22px;
-        background: linear-gradient(135deg, #0f172a, #1e40af);
-        color: white;
-        margin-bottom: 25px;
-    }
-
-    .detail-header h1 {
-        color: white;
-        font-size: 2.2rem;
-    }
-
-    .detail-header p {
-        color: #bfdbfe;
-    }
-
-    .info-box {
+    .detail {
         background: white;
+        border-radius: 18px;
         border: 1px solid #e2e8f0;
-        border-radius: 16px;
         padding: 25px;
         margin-bottom: 20px;
-        box-shadow: 0 5px 15px rgba(15,23,42,.05);
+        box-shadow: 0 5px 18px rgba(15,23,42,.06);
     }
 
-    .topic-item {
+    .topic {
         background: #f8fafc;
-        padding: 11px 15px;
-        border-radius: 9px;
-        margin: 7px 0;
         border-left: 4px solid #2563eb;
-    }
-
-    .stat-card {
-        background: white;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(15,23,42,.05);
-    }
-
-    .stat-number {
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: #1d4ed8;
-    }
-
-    .stat-label {
-        color: #64748b;
-        font-size: .85rem;
-    }
-
-    /* Section */
-    .section-title {
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: #0f172a;
-        margin-top: 20px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 7px 0;
     }
 
     .footer {
         text-align: center;
         color: #64748b;
-        padding: 30px 0;
-        font-size: .85rem;
+        padding: 40px;
     }
 
-</style>
-""",
-    unsafe_allow_html=True,
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 # ============================================================
-# FUNCIONES
+# ESTADO DE LA APLICACIÓN
 # ============================================================
 
-def money(value):
-    if value is None:
-        return "Consultar"
-    return f"${value:,.0f}"
+if "page" not in st.session_state:
+    st.session_state.page = "home"
+
+if "selected_course" not in st.session_state:
+    st.session_state.selected_course = None
+
+if "category" not in st.session_state:
+    st.session_state.category = "Todas"
 
 
-def duration(hours):
-    if hours is None:
-        return "Por definir"
-    return f"{hours} horas"
+# ============================================================
+# SIDEBAR
+# ============================================================
 
+st.sidebar.markdown("# 🎓 Catálogo")
 
-def whatsapp_url(course_name):
-    message = (
-        f"Hola, estoy interesado(a) en el curso "
-        f"'{course_name}'. Me gustaría recibir más información."
+st.sidebar.caption(
+    "Capacitación tecnológica y empresarial"
+)
+
+st.sidebar.divider()
+
+if st.sidebar.button(
+    "🏠 Inicio",
+    use_container_width=True
+):
+    st.session_state.page = "home"
+    st.session_state.selected_course = None
+    st.session_state.category = "Todas"
+    st.rerun()
+
+st.sidebar.markdown("### 📚 Categorías")
+
+categories = ["Todas"] + list(
+    dict.fromkeys(
+        course["category"]
+        for course in COURSES
     )
-    return f"https://wa.me/{WHATSAPP_NUMBER}?text={quote(message)}"
+)
+
+for category in categories:
+
+    icon = {
+        "Inteligencia Artificial": "🤖",
+        "Azure": "☁️",
+        "Power BI": "📊",
+        "Power Platform": "⚡",
+        "Linux": "🐧",
+        "Contenedores": "📦",
+        "Ciberseguridad": "🛡️",
+        "Arquitectura y Gestión": "🏗️",
+        "Todas": "📚"
+    }.get(category, "📘")
+
+    if st.sidebar.button(
+        f"{icon} {category}",
+        key=f"category_{category}",
+        use_container_width=True
+    ):
+        st.session_state.category = category
+        st.session_state.page = "home"
+        st.session_state.selected_course = None
+        st.rerun()
+
+st.sidebar.divider()
+
+st.sidebar.markdown("### 📞 Contacto")
+
+st.sidebar.link_button(
+    "💬 WhatsApp",
+    f"https://wa.me/{WHATSAPP_NUMBER}",
+    use_container_width=True
+)
+
+st.sidebar.write(
+    f"📧 {EMAIL}"
+)
 
 
-def show_home():
-    """Página principal."""
-
-    st.markdown(
-        """
-        <div class="hero">
-            <h1>🎓 Capacitación Tecnológica</h1>
-            <p>
-                Formación especializada para profesionales y organizaciones
-                en Inteligencia Artificial, Cloud, Datos, Automatización,
-                Linux, Contenedores, Ciberseguridad y Arquitectura.
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    # Métricas
-    total_courses = len(COURSES)
-    categories = len(set(c["category"] for c in COURSES))
-    total_hours = sum(c["hours"] for c in COURSES if c["hours"])
-
-    c1, c2, c3 = st.columns(3)
-
-    with c1:
-        st.markdown(
-            f"""
-            <div class="stat-card">
-                <div class="stat-number">{total_courses}+</div>
-                <div class="stat-label">Cursos disponibles</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with c2:
-        st.markdown(
-            f"""
-            <div class="stat-card">
-                <div class="stat-number">{categories}</div>
-                <div class="stat-label">Áreas tecnológicas</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with c3:
-        st.markdown(
-            f"""
-            <div class="stat-card">
-                <div class="stat-number">{total_hours}+</div>
-                <div class="stat-label">Horas de formación</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    st.markdown(
-        '<div class="section-title">🚀 Explora nuestros cursos</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.write(
-        "Selecciona un área o utiliza el buscador para encontrar "
-        "la capacitación que necesitas."
-    )
-
-    # Filtros
-    col1, col2 = st.columns([1, 2])
-
-    with col1:
-        categories_filter = ["Todas"] + list(
-            dict.fromkeys(c["category"] for c in COURSES)
-        )
-
-        category = st.selectbox(
-            "Área de capacitación",
-            categories_filter,
-        )
-
-    with col2:
-        search = st.text_input(
-            "🔎 Buscar curso",
-            placeholder="Ejemplo: Power BI, Azure, Linux, IA...",
-        )
-
-    # Filtrado
-    filtered_courses = COURSES.copy()
-
-    if category != "Todas":
-        filtered_courses = [
-            c for c in filtered_courses
-            if c["category"] == category
-        ]
-
-    if search:
-        search_lower = search.lower()
-
-        filtered_courses = [
-            c for c in filtered_courses
-            if search_lower in c["name"].lower()
-            or search_lower in c["category"].lower()
-            or search_lower in c["objective"].lower()
-        ]
-
-    st.write("")
-
-    st.markdown(
-        f"**{len(filtered_courses)} cursos encontrados**"
-    )
-
-    # Tarjetas
-    for row_start in range(0, len(filtered_courses), 3):
-
-        cols = st.columns(3)
-
-        row_courses = filtered_courses[row_start:row_start + 3]
-
-        for col, course in zip(cols, row_courses):
-
-            with col:
-
-                st.markdown(
-                    f"""
-                    <div class="course-card">
-
-                        <div>
-                            <span class="course-icon">
-                                {course["icon"]}
-                            </span>
-                        </div>
-
-                        <div>
-                            <span class="category-tag">
-                                {course["category"]}
-                            </span>
-
-                            <span class="level-tag">
-                                {course["level"]}
-                            </span>
-                        </div>
-
-                        <div class="course-title">
-                            {course["name"]}
-                        </div>
-
-                        <div class="course-description">
-                            {course["objective"][:160]}...
-                        </div>
-
-                        <div>
-                            <span class="hours">
-                                ⏱️ {duration(course["hours"])}
-                            </span>
-
-                            &nbsp;&nbsp;
-
-                            <span class="price">
-                                {money(course["price"])}
-                            </span>
-                        </div>
-
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-
-                if st.button(
-                    "Ver información del curso →",
-                    key=f"course_{course['name']}",
-                    use_container_width=True,
-                ):
-                    st.session_state.selected_course = course
-                    st.session_state.page = "course"
-                    st.rerun()
-
-    # Sección empresarial
-    st.markdown("---")
-
-    st.markdown(
-        '<div class="section-title">💼 Capacitación empresarial</div>',
-        unsafe_allow_html=True,
-    )
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.markdown("### 🧩 Contenido personalizado")
-        st.write(
-            "Adaptación de contenidos, duración y nivel según "
-            "las necesidades de su organización."
-        )
-
-    with col2:
-        st.markdown("### 🧪 Enfoque práctico")
-        st.write(
-            "Ejercicios, laboratorios y casos de uso orientados "
-            "al entorno empresarial."
-        )
-
-    with col3:
-        st.markdown("### 🌐 Modalidad flexible")
-        st.write(
-            "Capacitación virtual en vivo o presencial para "
-            "equipos y organizaciones."
-        )
-
+# ============================================================
+# PÁGINA DE DETALLE
+# ============================================================
 
 def show_course(course):
-    """Página individual del curso."""
 
     if st.button("← Volver al catálogo"):
         st.session_state.page = "home"
@@ -1267,7 +881,7 @@ def show_course(course):
 
     st.markdown(
         f"""
-        <div class="detail-header">
+        <div class="hero">
 
             <h1>
                 {course["icon"]} {course["name"]}
@@ -1279,60 +893,61 @@ def show_course(course):
 
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-    col1, col2 = st.columns([2.1, 1])
+    left, right = st.columns([2, 1])
 
-    with col1:
+    with left:
 
         st.markdown("## 🎯 Objetivo")
 
         st.markdown(
             f"""
-            <div class="info-box">
+            <div class="detail">
                 {course["objective"]}
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         st.markdown("## 📚 Temario")
 
         for topic in course["topics"]:
+
             st.markdown(
                 f"""
-                <div class="topic-item">
+                <div class="topic">
                     ✓ {topic}
                 </div>
                 """,
-                unsafe_allow_html=True,
+                unsafe_allow_html=True
             )
 
-    with col2:
+    with right:
 
-        st.markdown("## Información del curso")
+        st.markdown("## 💼 Información")
 
         st.markdown(
             f"""
-            <div class="info-box">
+            <div class="detail">
 
-                <h3>⏱️ Duración</h3>
-                <h2>{duration(course["hours"])}</h2>
+                <h4>⏱️ Duración</h4>
+                <h2>{hours_text(course["hours"])}</h2>
 
                 <hr>
 
-                <h3>💰 Inversión</h3>
+                <h4>💰 Inversión</h4>
                 <h2>{money(course["price"])}</h2>
 
                 <hr>
 
-                <h3>📈 Nivel</h3>
+                <h4>📈 Nivel</h4>
                 <h2>{course["level"]}</h2>
 
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         st.markdown("### 📌 Modalidades")
@@ -1342,51 +957,57 @@ def show_course(course):
         st.write("👥 Capacitación empresarial")
         st.write("🧪 Laboratorios prácticos")
 
-        st.markdown("---")
-
-        # WhatsApp
         st.link_button(
             "💬 Consultar por WhatsApp",
-            whatsapp_url(course["name"]),
-            use_container_width=True,
+            whatsapp_link(course),
+            use_container_width=True
         )
 
-        st.info(
-            "Los contenidos, duración y modalidad pueden adaptarse "
-            "según los requerimientos de la organización."
-        )
-
-    # Formulario
     st.markdown("---")
+
+    # ========================================================
+    # FORMULARIO
+    # ========================================================
 
     st.markdown("## 📩 Solicitar información")
 
-    st.write(
-        "Complete el siguiente formulario para solicitar información "
-        "sobre este curso."
-    )
-
-    with st.form("contact_form"):
+    with st.form(
+        f"form_{course['name']}"
+    ):
 
         col1, col2 = st.columns(2)
 
         with col1:
-            name = st.text_input("Nombre completo *")
-            email = st.text_input("Correo electrónico *")
+
+            name = st.text_input(
+                "Nombre completo *"
+            )
+
+            email = st.text_input(
+                "Correo electrónico *"
+            )
 
         with col2:
-            company = st.text_input("Empresa / Organización")
-            phone = st.text_input("Teléfono")
+
+            company = st.text_input(
+                "Empresa / Organización"
+            )
+
+            phone = st.text_input(
+                "Teléfono"
+            )
 
         message = st.text_area(
             "Mensaje",
-            value=f"Estoy interesado(a) en el curso: {course['name']}",
+            value=(
+                f"Estoy interesado(a) en el curso "
+                f"'{course['name']}'."
+            )
         )
 
         submitted = st.form_submit_button(
             "📩 Solicitar información",
-            type="primary",
-            use_container_width=True,
+            use_container_width=True
         )
 
         if submitted:
@@ -1394,213 +1015,253 @@ def show_course(course):
             if not name or not email:
 
                 st.error(
-                    "Por favor complete al menos el nombre y correo electrónico."
+                    "Complete el nombre y correo electrónico."
                 )
 
             else:
 
                 st.success(
-                    "¡Gracias! Su solicitud ha sido registrada. "
-                    "Para una respuesta inmediata también puede contactarnos por WhatsApp."
+                    "Solicitud preparada correctamente."
                 )
 
-                whatsapp_message = (
+                msg = (
                     f"Hola, soy {name}. "
                     f"Estoy interesado(a) en el curso "
                     f"'{course['name']}'. "
-                    f"Mi correo es {email}. "
+                    f"Correo: {email}. "
                     f"Empresa: {company}. "
                     f"Teléfono: {phone}. "
                     f"Mensaje: {message}"
                 )
 
-                url = (
-                    f"https://wa.me/{WHATSAPP_NUMBER}"
-                    f"?text={quote(whatsapp_message)}"
+                whatsapp = (
+                    f"https://wa.me/"
+                    f"{WHATSAPP_NUMBER}"
+                    f"?text={quote(msg)}"
                 )
 
                 st.link_button(
                     "💬 Enviar solicitud por WhatsApp",
-                    url,
+                    whatsapp
                 )
 
 
 # ============================================================
-# SIDEBAR
+# PÁGINA PRINCIPAL
 # ============================================================
 
-st.sidebar.markdown(
-    """
-    # 🎓 Catálogo
-    ### Capacitación Tecnológica
+def show_home():
 
-    Formación especializada para profesionales y empresas.
-    """,
-)
-
-st.sidebar.divider()
-
-if st.sidebar.button(
-    "🏠 Inicio",
-    use_container_width=True,
-):
-    st.session_state.page = "home"
-    st.session_state.selected_course = None
-    st.rerun()
-
-st.sidebar.markdown("### 📚 Categorías")
-
-categories_sidebar = list(
-    dict.fromkeys(c["category"] for c in COURSES)
-)
-
-for category_item in categories_sidebar:
-
-    icon = CATEGORY_ICONS.get(category_item, "📘")
-
-    if st.sidebar.button(
-        f"{icon} {category_item}",
-        key=f"sidebar_{category_item}",
-        use_container_width=True,
-    ):
-
-        st.session_state.category_filter = category_item
-        st.session_state.page = "home"
-        st.session_state.selected_course = None
-        st.rerun()
-
-st.sidebar.divider()
-
-st.sidebar.markdown("### 📞 Contacto")
-
-st.sidebar.write(
-    "¿Necesita una capacitación personalizada?"
-)
-
-st.sidebar.link_button(
-    "💬 WhatsApp",
-    f"https://wa.me/{WHATSAPP_NUMBER}",
-    use_container_width=True,
-)
-
-st.sidebar.write(
-    f"📧 {CONTACT_EMAIL}"
-)
-
-st.sidebar.divider()
-
-st.sidebar.caption(
-    "© 2026 Capacitación Tecnológica"
-)
-
-# ============================================================
-# NAVEGACIÓN
-# ============================================================
-
-if "page" not in st.session_state:
-    st.session_state.page = "home"
-
-if "selected_course" not in st.session_state:
-    st.session_state.selected_course = None
-
-if "category_filter" in st.session_state:
-
-    selected_category = st.session_state.category_filter
-
-    filtered = [
-        c for c in COURSES
-        if c["category"] == selected_category
-    ]
-
-    # Página de categoría
     st.markdown(
-        f"""
+        """
         <div class="hero">
 
             <h1>
-                {CATEGORY_ICONS.get(selected_category, "📚")}
-                {selected_category}
+                🎓 Capacitación Tecnológica
             </h1>
 
             <p>
-                Cursos especializados de {selected_category}.
+                Cursos especializados para profesionales,
+                empresas e instituciones en tecnología,
+                datos, inteligencia artificial,
+                cloud, automatización y ciberseguridad.
             </p>
 
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-    if st.button("← Ver todos los cursos"):
-        del st.session_state.category_filter
-        st.rerun()
+    # ========================================================
+    # BUSCADOR
+    # ========================================================
 
-    for row_start in range(0, len(filtered), 3):
+    col1, col2 = st.columns([1, 2])
+
+    with col1:
+
+        category = st.selectbox(
+            "Área de capacitación",
+            categories,
+            index=categories.index(
+                st.session_state.category
+            )
+        )
+
+        st.session_state.category = category
+
+    with col2:
+
+        search = st.text_input(
+            "🔎 Buscar curso",
+            placeholder=(
+                "Ejemplo: Power BI, Azure, Linux, IA..."
+            )
+        )
+
+    # ========================================================
+    # FILTRADO
+    # ========================================================
+
+    filtered = COURSES
+
+    if category != "Todas":
+
+        filtered = [
+            course
+            for course in filtered
+            if course["category"] == category
+        ]
+
+    if search:
+
+        search_lower = search.lower()
+
+        filtered = [
+            course
+            for course in filtered
+            if (
+                search_lower in course["name"].lower()
+                or search_lower in course["category"].lower()
+                or search_lower in course["objective"].lower()
+            )
+        ]
+
+    st.markdown("---")
+
+    st.markdown(
+        f"### 📚 {len(filtered)} cursos disponibles"
+    )
+
+    # ========================================================
+    # TARJETAS
+    # ========================================================
+
+    for start in range(
+        0,
+        len(filtered),
+        3
+    ):
 
         cols = st.columns(3)
 
         for col, course in zip(
             cols,
-            filtered[row_start:row_start + 3],
+            filtered[start:start + 3]
         ):
 
             with col:
 
                 st.markdown(
                     f"""
-                    <div class="course-card">
+                    <div class="card">
 
-                        <div class="course-icon">
+                        <div class="icon">
                             {course["icon"]}
                         </div>
 
-                        <span class="category-tag">
+                        <span class="tag">
                             {course["category"]}
                         </span>
 
-                        <div class="course-title">
+                        <span class="level">
+                            {course["level"]}
+                        </span>
+
+                        <div class="title">
                             {course["name"]}
                         </div>
 
-                        <div class="course-description">
+                        <div class="description">
                             {course["objective"][:150]}...
                         </div>
 
-                        <span class="hours">
-                            ⏱️ {duration(course["hours"])}
-                        </span>
-
-                        <span class="price">
-                            {money(course["price"])}
-                        </span>
+                        <div>
+                            ⏱️ {hours_text(course["hours"])}
+                            &nbsp;&nbsp;
+                            <span class="price">
+                                {money(course["price"])}
+                            </span>
+                        </div>
 
                     </div>
                     """,
-                    unsafe_allow_html=True,
+                    unsafe_allow_html=True
                 )
 
                 if st.button(
-                    "Ver curso →",
-                    key=f"cat_{course['name']}",
-                    use_container_width=True,
+                    "Ver información →",
+                    key=f"open_{course['name']}",
+                    use_container_width=True
                 ):
+
                     st.session_state.selected_course = course
                     st.session_state.page = "course"
-                    del st.session_state.category_filter
                     st.rerun()
+
+    # ========================================================
+    # SERVICIOS EMPRESARIALES
+    # ========================================================
+
+    st.markdown("---")
+
+    st.markdown(
+        "## 💼 Capacitación empresarial a la medida"
+    )
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+
+        st.markdown(
+            "### 🧩 Contenido personalizado"
+        )
+
+        st.write(
+            "Adaptamos el contenido, duración y nivel "
+            "según las necesidades de su organización."
+        )
+
+    with col2:
+
+        st.markdown(
+            "### 🧪 Enfoque práctico"
+        )
+
+        st.write(
+            "Laboratorios, ejercicios y casos de uso "
+            "orientados al entorno empresarial."
+        )
+
+    with col3:
+
+        st.markdown(
+            "### 🌐 Modalidad flexible"
+        )
+
+        st.write(
+            "Capacitación virtual en vivo o presencial "
+            "para equipos y organizaciones."
+        )
+
+
+# ============================================================
+# MOSTRAR PÁGINA
+# ============================================================
+
+if (
+    st.session_state.page == "course"
+    and st.session_state.selected_course
+):
+
+    show_course(
+        st.session_state.selected_course
+    )
 
 else:
 
-    if (
-        st.session_state.page == "course"
-        and st.session_state.selected_course
-    ):
-        show_course(
-            st.session_state.selected_course
-        )
+    show_home()
 
-    else:
-        show_home()
 
 # ============================================================
 # FOOTER
@@ -1609,12 +1270,25 @@ else:
 st.markdown(
     """
     <div class="footer">
+
         <hr>
-        <strong>Capacitación Tecnológica</strong><br>
-        Inteligencia Artificial · Cloud · Datos · Automatización ·
-        Linux · DevOps · Ciberseguridad · Arquitectura
+
+        <strong>
+            🎓 Capacitación Tecnológica
+        </strong>
+
+        <br>
+
+        Inteligencia Artificial · Azure · Power BI ·
+        Power Platform · Linux · DevOps ·
+        Ciberseguridad · Arquitectura
+
+        <br><br>
+
+        © 2026 Todos los derechos reservados.
+
     </div>
     """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
 ```
