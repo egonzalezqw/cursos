@@ -19,7 +19,7 @@ st.set_page_config(
 # ============================================================
 
 WHATSAPP = "50662614659"
-EMAIL = "tu-correo@ejemplo.com"
+EMAIL = "gonzalezestebanm9@gmail.com"
 PHONE = "+506 6261-4659"
 
 
