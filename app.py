@@ -13,17 +13,22 @@ st.set_page_config(
 )
 
 # ============================================================
-# CONFIGURACIÓN DE CONTACTO
+# DATOS DE CONTACTO
 # ============================================================
 
-WHATSAPP_NUMBER = "50662614659"
+WHATSAPP = "50662614659"
 EMAIL = "tu-correo@ejemplo.com"
 
 # ============================================================
-# CATÁLOGO
+# CATÁLOGO DE CURSOS
 # ============================================================
 
 COURSES = [
+
+    # ========================================================
+    # INTELIGENCIA ARTIFICIAL
+    # ========================================================
+
     {
         "category": "Inteligencia Artificial",
         "icon": "🤖",
@@ -44,6 +49,7 @@ COURSES = [
             "Buenas prácticas y seguridad",
         ],
     },
+
     {
         "category": "Inteligencia Artificial",
         "icon": "🤖",
@@ -64,6 +70,7 @@ COURSES = [
             "Gobernanza y uso responsable",
         ],
     },
+
     {
         "category": "Inteligencia Artificial",
         "icon": "🧠",
@@ -85,6 +92,7 @@ COURSES = [
             "Ética y seguridad",
         ],
     },
+
     {
         "category": "Inteligencia Artificial",
         "icon": "✍️",
@@ -105,6 +113,7 @@ COURSES = [
             "Casos empresariales",
         ],
     },
+
     {
         "category": "Inteligencia Artificial",
         "icon": "⚙️",
@@ -124,6 +133,11 @@ COURSES = [
             "Diseño de casos de uso",
         ],
     },
+
+    # ========================================================
+    # AZURE
+    # ========================================================
+
     {
         "category": "Azure",
         "icon": "☁️",
@@ -145,6 +159,7 @@ COURSES = [
             "Monitoreo y costos",
         ],
     },
+
     {
         "category": "Azure",
         "icon": "☁️",
@@ -168,6 +183,11 @@ COURSES = [
             "Optimización de costos",
         ],
     },
+
+    # ========================================================
+    # POWER BI
+    # ========================================================
+
     {
         "category": "Power BI",
         "icon": "📊",
@@ -190,6 +210,7 @@ COURSES = [
             "Introducción a DAX",
         ],
     },
+
     {
         "category": "Power BI",
         "icon": "📈",
@@ -211,6 +232,7 @@ COURSES = [
             "Optimización",
         ],
     },
+
     {
         "category": "Power BI",
         "icon": "📊",
@@ -232,6 +254,7 @@ COURSES = [
             "Storytelling",
         ],
     },
+
     {
         "category": "Power BI",
         "icon": "📈",
@@ -252,6 +275,11 @@ COURSES = [
             "Caso práctico empresarial",
         ],
     },
+
+    # ========================================================
+    # POWER PLATFORM
+    # ========================================================
+
     {
         "category": "Power Platform",
         "icon": "⚡",
@@ -273,6 +301,7 @@ COURSES = [
             "Gobernanza",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "⚡",
@@ -294,6 +323,7 @@ COURSES = [
             "Microsoft 365",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "📱",
@@ -315,6 +345,7 @@ COURSES = [
             "Publicación",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "🗄️",
@@ -336,6 +367,7 @@ COURSES = [
             "Buenas prácticas",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "🔗",
@@ -356,6 +388,7 @@ COURSES = [
             "Casos de integración",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "🌐",
@@ -377,6 +410,7 @@ COURSES = [
             "Publicación",
         ],
     },
+
     {
         "category": "Power Platform",
         "icon": "🤖",
@@ -398,6 +432,11 @@ COURSES = [
             "Publicación",
         ],
     },
+
+    # ========================================================
+    # LINUX
+    # ========================================================
+
     {
         "category": "Linux",
         "icon": "🐧",
@@ -419,6 +458,7 @@ COURSES = [
             "Shell scripting",
         ],
     },
+
     {
         "category": "Linux",
         "icon": "🐧",
@@ -442,6 +482,7 @@ COURSES = [
             "Troubleshooting",
         ],
     },
+
     {
         "category": "Linux",
         "icon": "🖥️",
@@ -464,6 +505,11 @@ COURSES = [
             "Troubleshooting",
         ],
     },
+
+    # ========================================================
+    # CONTENEDORES
+    # ========================================================
+
     {
         "category": "Contenedores",
         "icon": "📦",
@@ -485,6 +531,7 @@ COURSES = [
             "Buenas prácticas",
         ],
     },
+
     {
         "category": "Contenedores",
         "icon": "☸️",
@@ -508,6 +555,7 @@ COURSES = [
             "DevOps",
         ],
     },
+
     {
         "category": "Contenedores",
         "icon": "🔧",
@@ -527,6 +575,11 @@ COURSES = [
             "Observabilidad",
         ],
     },
+
+    # ========================================================
+    # CIBERSEGURIDAD
+    # ========================================================
+
     {
         "category": "Ciberseguridad",
         "icon": "🛡️",
@@ -548,6 +601,7 @@ COURSES = [
             "Gestión de incidentes",
         ],
     },
+
     {
         "category": "Ciberseguridad",
         "icon": "🔎",
@@ -569,6 +623,7 @@ COURSES = [
             "Respuesta a incidentes",
         ],
     },
+
     {
         "category": "Ciberseguridad",
         "icon": "🔐",
@@ -589,6 +644,7 @@ COURSES = [
             "Mejora continua",
         ],
     },
+
     {
         "category": "Ciberseguridad",
         "icon": "🔒",
@@ -610,6 +666,11 @@ COURSES = [
             "Estrategia de implementación",
         ],
     },
+
+    # ========================================================
+    # ARQUITECTURA
+    # ========================================================
+
     {
         "category": "Arquitectura y Gestión",
         "icon": "🏗️",
@@ -638,8 +699,9 @@ COURSES = [
 st.markdown(
     """
     <style>
+
     .stApp {
-        background-color: #f8fafc;
+        background: #f8fafc;
     }
 
     .block-container {
@@ -649,118 +711,99 @@ st.markdown(
     }
 
     .hero {
-        background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
-        padding: 50px 45px;
-        border-radius: 28px;
-        margin-bottom: 30px;
-        box-shadow: 0 15px 40px rgba(15, 23, 42, .18);
+        background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e3a8a 50%,
+            #2563eb 100%
+        );
+
+        padding: 55px 50px;
+        border-radius: 25px;
+        margin-bottom: 35px;
+        color: white;
     }
 
     .hero h1 {
         color: white;
-        font-size: 2.8rem;
+        font-size: 3rem;
         font-weight: 800;
-        margin: 0 0 15px 0;
+        margin-bottom: 15px;
     }
 
     .hero p {
         color: #dbeafe;
-        font-size: 1.08rem;
-        line-height: 1.7;
+        font-size: 1.1rem;
         max-width: 900px;
-        margin: 0;
+        line-height: 1.7;
     }
 
     .section-title {
-        color: #0f172a;
         font-size: 1.8rem;
         font-weight: 800;
-        margin: 20px 0;
+        color: #0f172a;
+        margin-top: 25px;
+        margin-bottom: 20px;
     }
 
-    .course-card {
+    .card {
         background: white;
         border: 1px solid #e2e8f0;
-        border-radius: 20px;
-        padding: 23px;
-        min-height: 325px;
-        box-shadow: 0 8px 25px rgba(15, 23, 42, .07);
-        transition: transform .2s ease, box-shadow .2s ease;
+        border-radius: 18px;
+        padding: 24px;
+        margin-bottom: 15px;
+        min-height: 300px;
+        box-shadow: 0 8px 25px rgba(15,23,42,.06);
     }
 
-    .course-icon {
-        font-size: 2.4rem;
-        margin-bottom: 10px;
+    .card-icon {
+        font-size: 2.5rem;
     }
 
-    .course-category {
+    .card-category {
         color: #2563eb;
         font-size: .75rem;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: .05em;
-    }
-
-    .course-title {
-        color: #0f172a;
-        font-size: 1.08rem;
-        font-weight: 800;
-        line-height: 1.4;
-        margin: 8px 0;
-        min-height: 62px;
-    }
-
-    .course-description {
-        color: #64748b;
-        font-size: .88rem;
-        line-height: 1.5;
-        min-height: 78px;
-    }
-
-    .course-meta {
-        color: #475569;
-        font-size: .88rem;
         margin-top: 10px;
     }
 
-    .course-price {
-        color: #1d4ed8;
+    .card-title {
+        color: #0f172a;
+        font-size: 1.1rem;
+        font-weight: 800;
+        margin-top: 8px;
+        min-height: 60px;
+    }
+
+    .card-description {
+        color: #64748b;
+        font-size: .9rem;
+        line-height: 1.5;
+        min-height: 70px;
+    }
+
+    .price {
+        color: #2563eb;
         font-size: 1.25rem;
         font-weight: 900;
     }
 
-    .detail-box {
+    .detail {
         background: white;
-        border: 1px solid #e2e8f0;
+        padding: 30px;
         border-radius: 20px;
-        padding: 28px;
-        box-shadow: 0 8px 25px rgba(15, 23, 42, .06);
-        margin-bottom: 20px;
-    }
-
-    .detail-label {
-        color: #64748b;
-        font-size: .8rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: .05em;
-    }
-
-    .detail-value {
-        color: #0f172a;
-        font-size: 1.25rem;
-        font-weight: 800;
-        margin-top: 5px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 25px rgba(15,23,42,.06);
     }
 
     .topic {
-        background: white;
-        border: 1px solid #e2e8f0;
+        background: #ffffff;
         border-left: 4px solid #2563eb;
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 12px 15px;
-        margin: 8px 0;
-        color: #334155;
+        margin: 7px 0;
+        box-shadow: 0 2px 8px rgba(15,23,42,.04);
     }
 
     .feature {
@@ -769,12 +812,10 @@ st.markdown(
         border-radius: 18px;
         padding: 25px;
         min-height: 160px;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, .05);
     }
 
     .feature h3 {
         color: #0f172a;
-        margin-top: 0;
     }
 
     .feature p {
@@ -784,16 +825,12 @@ st.markdown(
 
     .footer {
         margin-top: 50px;
-        padding: 30px;
+        padding: 35px;
         text-align: center;
         border-top: 1px solid #e2e8f0;
         color: #64748b;
-        line-height: 1.8;
     }
 
-    .footer strong {
-        color: #0f172a;
-    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -803,32 +840,39 @@ st.markdown(
 # FUNCIONES
 # ============================================================
 
-def money(price):
+def format_price(price):
     if price is None:
         return "Consultar"
+
     return f"${price:,.0f}"
 
 
-def duration(hours):
+def format_hours(hours):
     if hours is None:
         return "Duración por definir"
+
     return f"{hours} horas"
 
 
-def whatsapp_url(course=None):
+def whatsapp_link(course=None):
+
     if course:
+
         message = (
-            f"Hola, estoy interesado(a) en el curso "
-            f"'{course['name']}'. Me gustaría recibir información."
+            "Hola, estoy interesado(a) en el curso "
+            f"'{course['name']}'. "
+            "Me gustaría recibir información."
         )
+
     else:
+
         message = (
-            "Hola, me gustaría recibir información sobre "
-            "los cursos de capacitación disponibles."
+            "Hola, me gustaría recibir información "
+            "sobre los cursos de capacitación."
         )
 
     return (
-        f"https://wa.me/{WHATSAPP_NUMBER}"
+        f"https://wa.me/{WHATSAPP}"
         f"?text={quote(message)}"
     )
 
@@ -840,64 +884,79 @@ def whatsapp_url(course=None):
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
-if "selected_course" not in st.session_state:
-    st.session_state.selected_course = None
+if "course" not in st.session_state:
+    st.session_state.course = None
 
-if "category" not in st.session_state:
-    st.session_state.category = "Todas"
-
-# ============================================================
-# CATEGORÍAS
-# ============================================================
-
-categories = ["Todas"]
-
-for course in COURSES:
-    if course["category"] not in categories:
-        categories.append(course["category"])
-
-category_icons = {
-    "Todas": "📚",
-    "Inteligencia Artificial": "🤖",
-    "Azure": "☁️",
-    "Power BI": "📊",
-    "Power Platform": "⚡",
-    "Linux": "🐧",
-    "Contenedores": "📦",
-    "Ciberseguridad": "🛡️",
-    "Arquitectura y Gestión": "🏗️",
-}
 
 # ============================================================
 # SIDEBAR
 # ============================================================
 
+categories = ["Todas"]
+
+for course in COURSES:
+
+    if course["category"] not in categories:
+
+        categories.append(
+            course["category"]
+        )
+
+
 with st.sidebar:
+
     st.markdown("## 🎓 Capacitación")
-    st.caption("Catálogo de cursos tecnológicos")
+
+    st.caption(
+        "Catálogo de cursos tecnológicos"
+    )
 
     st.divider()
 
     if st.button(
         "🏠 Inicio",
-        use_container_width=True,
+        use_container_width=True
     ):
+
         st.session_state.page = "home"
-        st.session_state.selected_course = None
-        st.session_state.category = "Todas"
+        st.session_state.course = None
+
         st.rerun()
 
     st.markdown("### 📚 Categorías")
 
+    category_icons = {
+        "Todas": "📚",
+        "Inteligencia Artificial": "🤖",
+        "Azure": "☁️",
+        "Power BI": "📊",
+        "Power Platform": "⚡",
+        "Linux": "🐧",
+        "Contenedores": "📦",
+        "Ciberseguridad": "🛡️",
+        "Arquitectura y Gestión": "🏗️",
+    }
+
+    if "selected_category" not in st.session_state:
+        st.session_state.selected_category = "Todas"
+
     for category in categories:
+
+        icon = category_icons.get(
+            category,
+            "📘"
+        )
+
         if st.button(
-            f"{category_icons.get(category, '📘')} {category}",
-            key=f"category_{category}",
-            use_container_width=True,
+            f"{icon} {category}",
+            key=f"cat_{category}",
+            use_container_width=True
         ):
-            st.session_state.category = category
+
+            st.session_state.selected_category = category
             st.session_state.page = "home"
-            st.session_state.selected_course = None
+            st.session_state.course = None
+
             st.rerun()
 
     st.divider()
@@ -906,29 +965,35 @@ with st.sidebar:
 
     st.link_button(
         "💬 WhatsApp",
-        whatsapp_url(),
-        use_container_width=True,
+        whatsapp_link(),
+        use_container_width=True
     )
 
-    st.write(f"📧 {EMAIL}")
+    st.write(
+        f"📧 {EMAIL}"
+    )
+
 
 # ============================================================
-# DETALLE DEL CURSO
+# PÁGINA INDIVIDUAL
 # ============================================================
 
 def show_course(course):
 
     if st.button(
         "← Volver al catálogo",
-        key="back_to_catalog",
+        use_container_width=False
     ):
+
         st.session_state.page = "home"
-        st.session_state.selected_course = None
+        st.session_state.course = None
+
         st.rerun()
 
     st.markdown(
         f"""
         <div class="hero">
+
             <div style="font-size:3rem;">
                 {course["icon"]}
             </div>
@@ -938,120 +1003,118 @@ def show_course(course):
             </h1>
 
             <p>
-                {course["category"]} · Nivel {course["level"]}
+                {course["category"]}
+                · Nivel {course["level"]}
             </p>
+
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-    col1, col2 = st.columns(
+    left, right = st.columns(
         [2, 1],
-        gap="large",
+        gap="large"
     )
 
-    with col1:
+    with left:
 
         st.markdown(
             '<div class="section-title">🎯 Objetivo</div>',
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         st.markdown(
             f"""
-            <div class="detail-box">
+            <div class="detail">
+
                 {course["objective"]}
+
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         st.markdown(
             '<div class="section-title">📚 Temario</div>',
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         for topic in course["topics"]:
+
             st.markdown(
                 f"""
                 <div class="topic">
                     ✓ {topic}
                 </div>
                 """,
-                unsafe_allow_html=True,
+                unsafe_allow_html=True
             )
 
-    with col2:
+    with right:
 
         st.markdown(
-            '<div class="section-title">💼 Información</div>',
-            unsafe_allow_html=True,
+            '<div class="section-title">📋 Información</div>',
+            unsafe_allow_html=True
         )
 
         st.markdown(
             f"""
-            <div class="detail-box">
+            <div class="detail">
 
-                <div class="detail-label">
-                    Duración
-                </div>
+            <strong>⏱️ Duración</strong>
 
-                <div class="detail-value">
-                    ⏱️ {duration(course["hours"])}
-                </div>
+            <p>
+                {format_hours(course["hours"])}
+            </p>
 
-                <br>
+            <strong>💰 Inversión</strong>
 
-                <div class="detail-label">
-                    Inversión
-                </div>
+            <p class="price">
+                {format_price(course["price"])}
+            </p>
 
-                <div class="detail-value">
-                    💰 {money(course["price"])}
-                </div>
+            <strong>📈 Nivel</strong>
 
-                <br>
-
-                <div class="detail-label">
-                    Nivel
-                </div>
-
-                <div class="detail-value">
-                    📈 {course["level"]}
-                </div>
+            <p>
+                {course["level"]}
+            </p>
 
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
-        st.markdown("### Modalidad")
-
-        st.write("💻 Virtual en vivo")
-        st.write("🏢 Presencial")
-        st.write("👥 Capacitación empresarial")
-        st.write("🧪 Laboratorios prácticos")
+        st.write("")
 
         st.link_button(
             "💬 Consultar por WhatsApp",
-            whatsapp_url(course),
-            use_container_width=True,
+            whatsapp_link(course),
+            use_container_width=True
+        )
+
+        st.write("")
+
+        st.info(
+            "También podemos adaptar el contenido, "
+            "duración y modalidad del curso."
         )
 
     st.divider()
 
     st.markdown(
         '<div class="section-title">📩 Solicitar información</div>',
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
     with st.form(
-        key=f"contact_{course['name']}"
+        f"form_{course['name']}"
     ):
 
-        col_a, col_b = st.columns(2)
+        col1, col2 = st.columns(2)
 
-        with col_a:
+        with col1:
+
             name = st.text_input(
                 "Nombre completo *"
             )
@@ -1060,7 +1123,8 @@ def show_course(course):
                 "Correo electrónico *"
             )
 
-        with col_b:
+        with col2:
+
             company = st.text_input(
                 "Empresa / Organización"
             )
@@ -1074,27 +1138,27 @@ def show_course(course):
             value=(
                 f"Estoy interesado(a) en el curso "
                 f"'{course['name']}'."
-            ),
+            )
         )
 
         submitted = st.form_submit_button(
             "📩 Preparar solicitud",
-            use_container_width=True,
+            use_container_width=True
         )
 
         if submitted:
 
-            if not name.strip() or not email.strip():
+            if not name or not email:
 
                 st.error(
-                    "Complete el nombre y el correo electrónico."
+                    "Debe completar nombre y correo electrónico."
                 )
 
             else:
 
-                full_message = (
+                text = (
                     f"Hola, soy {name}. "
-                    f"Estoy interesado(a) en el curso "
+                    f"Estoy interesado(a) en "
                     f"'{course['name']}'. "
                     f"Correo: {email}. "
                     f"Empresa: {company}. "
@@ -1103,22 +1167,23 @@ def show_course(course):
                 )
 
                 link = (
-                    f"https://wa.me/{WHATSAPP_NUMBER}"
-                    f"?text={quote(full_message)}"
+                    f"https://wa.me/{WHATSAPP}"
+                    f"?text={quote(text)}"
                 )
 
                 st.success(
-                    "Solicitud preparada correctamente."
+                    "Solicitud preparada."
                 )
 
                 st.link_button(
-                    "💬 Enviar solicitud por WhatsApp",
+                    "💬 Enviar por WhatsApp",
                     link,
-                    use_container_width=True,
+                    use_container_width=True
                 )
 
+
 # ============================================================
-# HOME
+# PÁGINA PRINCIPAL
 # ============================================================
 
 def show_home():
@@ -1140,61 +1205,62 @@ def show_home():
 
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
     st.markdown(
         '<div class="section-title">🔎 Encuentre su curso</div>',
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
     col1, col2 = st.columns(
-        [1, 2],
-        gap="large",
+        [1, 2]
     )
 
     with col1:
 
-        current_index = categories.index(
-            st.session_state.category
-        )
-
-        selected_category = st.selectbox(
+        selected = st.selectbox(
             "Área de capacitación",
             categories,
-            index=current_index,
+            index=categories.index(
+                st.session_state.selected_category
+            )
         )
 
-        st.session_state.category = selected_category
+        st.session_state.selected_category = selected
 
     with col2:
 
         search = st.text_input(
             "Buscar curso",
-            placeholder="Ejemplo: Power BI, Azure, Linux, IA...",
+            placeholder=(
+                "Ejemplo: Power BI, Azure, Linux, IA..."
+            )
         )
 
-    filtered = COURSES
+    # --------------------------------------------------------
+    # FILTROS
+    # --------------------------------------------------------
 
-    if selected_category != "Todas":
+    filtered = COURSES.copy()
+
+    if selected != "Todas":
 
         filtered = [
-            course
-            for course in filtered
-            if course["category"] == selected_category
+            c for c in filtered
+            if c["category"] == selected
         ]
 
-    if search.strip():
+    if search:
 
-        term = search.strip().lower()
+        text = search.lower()
 
         filtered = [
-            course
-            for course in filtered
+            c for c in filtered
             if (
-                term in course["name"].lower()
-                or term in course["category"].lower()
-                or term in course["objective"].lower()
+                text in c["name"].lower()
+                or text in c["category"].lower()
+                or text in c["objective"].lower()
             )
         ]
 
@@ -1206,101 +1272,101 @@ def show_home():
             📚 {len(filtered)} cursos disponibles
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-    if not filtered:
+    # --------------------------------------------------------
+    # TARJETAS
+    # --------------------------------------------------------
 
-        st.warning(
-            "No se encontraron cursos con esos criterios."
+    for i in range(
+        0,
+        len(filtered),
+        3
+    ):
+
+        row = filtered[
+            i:i + 3
+        ]
+
+        columns = st.columns(
+            3,
+            gap="large"
         )
 
-    else:
-
-        for start in range(
-            0,
-            len(filtered),
-            3,
+        for column, course in zip(
+            columns,
+            row
         ):
 
-            row = filtered[start:start + 3]
+            with column:
 
-            columns = st.columns(
-                3,
-                gap="large",
-            )
+                st.markdown(
+                    f"""
+                    <div class="card">
 
-            for column, course in zip(
-                columns,
-                row,
-            ):
-
-                with column:
-
-                    st.markdown(
-                        f"""
-                        <div class="course-card">
-
-                            <div class="course-icon">
-                                {course["icon"]}
-                            </div>
-
-                            <div class="course-category">
-                                {course["category"]}
-                            </div>
-
-                            <div class="course-title">
-                                {course["name"]}
-                            </div>
-
-                            <div class="course-description">
-                                {course["objective"]}
-                            </div>
-
-                            <div class="course-meta">
-                                ⏱️ {duration(course["hours"])}
-                                &nbsp;&nbsp;•&nbsp;&nbsp;
-                                <span class="course-price">
-                                    {money(course["price"])}
-                                </span>
-                            </div>
-
-                            <div style="
-                                margin-top:8px;
-                                color:#64748b;
-                                font-size:.8rem;
-                            ">
-                                Nivel: {course["level"]}
-                            </div>
-
+                        <div class="card-icon">
+                            {course["icon"]}
                         </div>
-                        """,
-                        unsafe_allow_html=True,
-                    )
 
-                    if st.button(
-                        "Ver información →",
-                        key=f"open_{course['name']}",
-                        use_container_width=True,
-                    ):
+                        <div class="card-category">
+                            {course["category"]}
+                        </div>
 
-                        st.session_state.selected_course = course
-                        st.session_state.page = "course"
-                        st.rerun()
+                        <div class="card-title">
+                            {course["name"]}
+                        </div>
+
+                        <div class="card-description">
+                            {course["objective"]}
+                        </div>
+
+                        <div>
+                            ⏱️ {format_hours(course["hours"])}
+                            &nbsp;&nbsp;•&nbsp;&nbsp;
+                            <span class="price">
+                                {format_price(course["price"])}
+                            </span>
+                        </div>
+
+                        <div style="
+                            margin-top:8px;
+                            color:#64748b;
+                            font-size:.8rem;
+                        ">
+                            Nivel: {course["level"]}
+                        </div>
+
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+                if st.button(
+                    "Ver información →",
+                    key=f"course_{i}_{course['name']}",
+                    use_container_width=True
+                ):
+
+                    st.session_state.course = course
+                    st.session_state.page = "course"
+
+                    st.rerun()
+
+    # --------------------------------------------------------
+    # CAPACITACIÓN EMPRESARIAL
+    # --------------------------------------------------------
 
     st.divider()
 
     st.markdown(
         '<div class="section-title">💼 Capacitación empresarial a la medida</div>',
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-    col_a, col_b, col_c = st.columns(
-        3,
-        gap="large",
-    )
+    c1, c2, c3 = st.columns(3)
 
-    with col_a:
+    with c1:
 
         st.markdown(
             """
@@ -1317,10 +1383,10 @@ def show_home():
 
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
-    with col_b:
+    with c2:
 
         st.markdown(
             """
@@ -1337,10 +1403,10 @@ def show_home():
 
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
-    with col_c:
+    with c3:
 
         st.markdown(
             """
@@ -1357,36 +1423,41 @@ def show_home():
 
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
+
 # ============================================================
-# EJECUCIÓN
+# EJECUTAR PÁGINA
 # ============================================================
 
 if (
     st.session_state.page == "course"
-    and st.session_state.selected_course is not None
+    and st.session_state.course is not None
 ):
+
     show_course(
-        st.session_state.selected_course
+        st.session_state.course
     )
+
 else:
+
     show_home()
+
 
 # ============================================================
 # FOOTER
 # ============================================================
 
 st.markdown(
-    """
+    f"""
     <div class="footer">
 
         <strong>
             🎓 Capacitación Tecnológica
         </strong>
 
-        <br>
+        <br><br>
 
         Inteligencia Artificial · Azure · Power BI ·
         Power Platform · Linux · DevOps ·
@@ -1396,7 +1467,8 @@ st.markdown(
 
         📞 WhatsApp: +506 6261-4659
         <br>
-        📧 tu-correo@ejemplo.com
+
+        📧 {EMAIL}
 
         <br><br>
 
@@ -1404,5 +1476,5 @@ st.markdown(
 
     </div>
     """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
